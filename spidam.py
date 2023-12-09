@@ -14,6 +14,61 @@
 
 
 
+
+##### GUI - Complete
+import tkinter as tk
+from tkinter import ttk
+from tkinter import filedialog as fd
+from tkinter.messagebox import showinfo
+
+gfile = ''
+plot_button = None  # Global reference to the 'Plot' button
+
+# create the root window
+root = tk.Tk()
+root.title('Tkinter Open File Dialog')
+root.resizable(False, False)
+root.geometry('300x150')
+
+def select_file():
+    global gfile
+    global plot_button
+
+    filetypes = (('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('WAV files', '*.wav'), ('All files', '*.*'))
+    filename = fd.askopenfilename(title='Open a file', initialdir='/', filetypes=filetypes)
+    gfile = filename
+
+    # Update label with the selected file path
+    gfile_label.config(text=gfile)
+
+    # Enable the 'Plot' button
+    plot_button.config(state="normal")
+
+    # Show selected file in messagebox
+    showinfo(title='Selected File', message=filename)
+
+def plot_data():
+    # Placeholder for the 'Plot' functionality
+    showinfo(title='Plot Data', message='Plotting data...')
+
+# Open button
+open_button = ttk.Button(root, text='Open a File', command=select_file)
+open_button.pack(expand=True)
+
+# Label to display the selected file path
+gfile_label = ttk.Label(root, text=gfile)
+gfile_label.pack(side="bottom")
+
+# Plot button (initially disabled)
+plot_button = ttk.Button(root, text='Plot', command=plot_data, state="disabled")
+plot_button.pack(expand=True)
+
+# Run the application
+root.mainloop()
+###### End GUI
+
+
+
 #######1 - Modify the following to get the file
 import tkinter as tk
 from tkinter import ttk
@@ -37,7 +92,7 @@ screenshot
 '''
 
 def select_file():
-    filetypes = (('text files', '*.txt'), ('All files', '*.*'))
+    filetypes = (('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('WAV files', '*.wav'), ('All files', '*.*'))
     filename = fd.askopenfilename(title = 'Open a file', initialdir = '/', filetypes=filetypes)
     gfile = filename
     
