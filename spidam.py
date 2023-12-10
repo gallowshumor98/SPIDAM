@@ -18,7 +18,8 @@
 
 
 
-##### GUI - Complete
+##### GUI - Trying to Implement
+from processAudio import AudioProcessor
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
@@ -50,6 +51,7 @@ def select_file():
     # Show selected file in messagebox
     showinfo(title='Selected File', message=filename)
 
+#Will call to display wave form from the file
 def plot_data():
     # Placeholder for the 'Plot' functionality
     showinfo(title='Plot Data', message='Plotting data...')
@@ -72,6 +74,7 @@ root.mainloop()
 
 
 
+<<<<<<< HEAD
 #######1 - Modify the following to get the file
 import tkinter as tk
 from tkinter import ttk
@@ -150,8 +153,24 @@ convert_aac_to_wav(aac_file_path, wav_file_path)
 
 
 
+=======
+########6 - Display the wave from file - needs modified
+# audioSpectrum mono only
+# import numpy as np
+# import matplotlib.pyplot as plt
+# from scipy.io import wavfile
+# sample_rate, data = wavfile.read('16bitmono.wav')
+# spectrum, freqs, t, im = plt.specgram(data, Fs=sample_rate, \
+# NFFT=1024, cmap=plt.get_cmap('autumn_r'))
+# cbar = plt.colorbar(im)
+# plt.xlabel('Time (s)')
+# plt.ylabel('Frequency (Hz)')
+# cbar.set_label('Intensity (dB)')
+# plt.show()
+>>>>>>> 68609f549531b7541cd4b1340f2468774e9955ce
 
 # ReverbTime 0
+# From Lec 25 slides
 
 import numpy as np
 import matplotlib.pyplot as plt
