@@ -16,8 +16,9 @@
 # Add button and additional visual output for useful data (your choice)
 
 ##### GUI - Trying to Implement
-#from processAudio import AudioProcessor
+# main.py
 from soundDisplay import WaveformPlotter
+from processAudio import AudioProcessor
 import os
 import tkinter as tk
 from tkinter import ttk
@@ -29,7 +30,7 @@ plot_button = None  # Global reference to the 'Plot' button
 
 # create the root window
 root = tk.Tk()
-root.title('Tkinter Open File Dialog')
+root.title('Audio File Selection')
 root.resizable(False, False)
 root.geometry('300x150')
 
@@ -40,10 +41,14 @@ def select_file():
     filetypes = (('WAV files', '*.wav'), ('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('All files', '*.*'))
     filename = fd.askopenfilename(title='Open a file', initialdir='/', filetypes=filetypes)
     gfile = filename
-    
-    #audio_processor = AudioProcessor(gfile)
-    
-    
+
+    # Process the audio file
+    #Convert to wav - Complete
+    if gfile.lower().endswith(('.mp3', '.aac')):
+        audio_processor = AudioProcessor(gfile, os.path.splitext(gfile)[0] + '_converted.wav')
+        audio_processor.convert_to_wav()
+        gfile = audio_processor.output_file  # Update gfile with the converted file path
+
     # Update label with the selected file path
     gfile_label.config(text=gfile)
 
@@ -51,8 +56,7 @@ def select_file():
     plot_button.config(state="normal")
 
     # Show selected file in messagebox
-    showinfo(title='Selected File', message=filename)
-
+    showinfo(title='Selected File', message=gfile)
 
 def plot_data():
     sound_display = WaveformPlotter(gfile)
@@ -68,7 +72,6 @@ gfile_label = ttk.Label(root, text=gfile)
 gfile_label.pack(side="bottom")
 
 # Plot button (initially disabled)
-#plot_button = ttk.Button(root, text='Plot', command=plot_data, state="disabled")
 plot_button = ttk.Button(root, text='Plot', command=plot_data, state="disabled")
 plot_button.pack(expand=True)
 
