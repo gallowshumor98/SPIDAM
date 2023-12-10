@@ -45,21 +45,21 @@ class AudioProcessor:
         processed_audio.export(output_wav_file, format="wav")
 
 # Example usage
-if __name__ == "__main__":
-    input_audio_file = "input.mp3"
-    output_wav_file = "output.wav"
+# if __name__ == "__main__":
+    # input_audio_file = "input.mp3"
+    # output_wav_file = "output.wav"
 
-    audio_processor = AudioProcessor(input_audio_file)
+    # audio_processor = AudioProcessor(input_audio_file)
 
-    # Load and check properties
-    audio_processor.load_audio()
-    audio_processor.check_properties()
+    # # Load and check properties
+    # audio_processor.load_audio()
+    # audio_processor.check_properties()
 
-    print("Metadata:", audio_processor.metadata)
-    print("Number of Channels:", audio_processor.channels)
+    # print("Metadata:", audio_processor.metadata)
+    # print("Number of Channels:", audio_processor.channels)
 
-    # Convert to WAV
-    audio_processor.convert_to_wav(output_wav_file)
+    # # Convert to WAV
+    # audio_processor.convert_to_wav(output_wav_file)
 
-    # Process the WAV file
-    audio_processor.process_wav(output_wav_file)
+    # # Process the WAV file
+    # audio_processor.process_wav(output_wav_file)
