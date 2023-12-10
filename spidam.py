@@ -16,8 +16,9 @@
 # Add button and additional visual output for useful data (your choice)
 
 ##### GUI - Trying to Implement
-from processAudio import AudioProcessor
+#from processAudio import AudioProcessor
 from soundDisplay import WaveformPlotter
+import os
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
@@ -40,8 +41,8 @@ def select_file():
     filename = fd.askopenfilename(title='Open a file', initialdir='/', filetypes=filetypes)
     gfile = filename
     
-    audio_processor = AudioProcessor(gfile)
-    sound_display = WaveformPlotter(gfile)
+    #audio_processor = AudioProcessor(gfile)
+    
     
     # Update label with the selected file path
     gfile_label.config(text=gfile)
@@ -52,10 +53,10 @@ def select_file():
     # Show selected file in messagebox
     showinfo(title='Selected File', message=filename)
 
-#Will call to display wave form from the file
-# def plot_data():
-    ## Placeholder for the 'Plot' functionality
-    # showinfo(title='Plot Data', message='Plotting data...')
+
+def plot_data():
+    sound_display = WaveformPlotter(gfile)
+    sound_display.plot_waveform()
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
@@ -66,7 +67,8 @@ gfile_label = ttk.Label(root, text=gfile)
 gfile_label.pack(side="bottom")
 
 # Plot button (initially disabled)
-plot_button = ttk.Button(root, text='Plot', command=sound_display.plot_data, state="disabled")
+#plot_button = ttk.Button(root, text='Plot', command=plot_data, state="disabled")
+plot_button = ttk.Button(root, text='Plot', command=plot_data, state="disabled")
 plot_button.pack(expand=True)
 
 # Run the application

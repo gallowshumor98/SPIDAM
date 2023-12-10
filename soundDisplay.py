@@ -8,9 +8,9 @@ class WaveformPlotter:
     def __init__(self, wave_file):
         self.wave_file = wave_file
 
-    def plot_waveform(wave_file):
+    def plot_waveform(self):
         # Open the wave file
-        with wave.open(wave_file, 'rb') as wf:
+        with wave.open(self.wave_file, 'rb') as wf:
             # Get the parameters of the wave file
             params = wf.getparams()
             
@@ -25,11 +25,11 @@ class WaveformPlotter:
             
             # Plot the waveform
             plt.plot(time_axis, audio_array)
-            plt.title('Waveform of {}'.format(wave_file))
+            plt.title('Waveform of {}'.format(self.wave_file))
             plt.xlabel('Time (s)')
             plt.ylabel('Amplitude')
             plt.show()
 
 # Example usage
-waveform_plotter = WaveformPlotter('PolyHallClap_10mM.WAV')
-waveform_plotter.plot_waveform()
+#waveform_plotter = WaveformPlotter('PolyHallClap_10mM.WAV')
+#waveform_plotter.plot_waveform()
