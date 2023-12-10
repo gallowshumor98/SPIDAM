@@ -15,11 +15,9 @@
 # Show difference in RT60 value to reduce to .5 seconds
 # Add button and additional visual output for useful data (your choice)
 
-
-
-
 ##### GUI - Trying to Implement
 from processAudio import AudioProcessor
+from soundDisplay import WaveformPlotter
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
@@ -38,10 +36,13 @@ def select_file():
     global gfile
     global plot_button
 
-    filetypes = (('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('WAV files', '*.wav'), ('All files', '*.*'))
+    filetypes = (('WAV files', '*.wav'), ('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('All files', '*.*'))
     filename = fd.askopenfilename(title='Open a file', initialdir='/', filetypes=filetypes)
     gfile = filename
-
+    
+    audio_processor = AudioProcessor(gfile)
+    sound_display = WaveformPlotter(gfile)
+    
     # Update label with the selected file path
     gfile_label.config(text=gfile)
 
