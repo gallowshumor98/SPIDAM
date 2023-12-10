@@ -18,7 +18,8 @@
 
 
 
-##### GUI - Complete
+##### GUI - Trying to Implement
+from processAudio import AudioProcessor
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
@@ -50,6 +51,7 @@ def select_file():
     # Show selected file in messagebox
     showinfo(title='Selected File', message=filename)
 
+#Will call to display wave form from the file
 def plot_data():
     # Placeholder for the 'Plot' functionality
     showinfo(title='Plot Data', message='Plotting data...')
