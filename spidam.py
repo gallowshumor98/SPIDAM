@@ -53,9 +53,9 @@ def select_file():
     showinfo(title='Selected File', message=filename)
 
 #Will call to display wave form from the file
-def plot_data():
-    # Placeholder for the 'Plot' functionality
-    showinfo(title='Plot Data', message='Plotting data...')
+# def plot_data():
+    ## Placeholder for the 'Plot' functionality
+    # showinfo(title='Plot Data', message='Plotting data...')
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
@@ -66,7 +66,7 @@ gfile_label = ttk.Label(root, text=gfile)
 gfile_label.pack(side="bottom")
 
 # Plot button (initially disabled)
-plot_button = ttk.Button(root, text='Plot', command=plot_data, state="disabled")
+plot_button = ttk.Button(root, text='Plot', command=sound_display.plot_data, state="disabled")
 plot_button.pack(expand=True)
 
 # Run the application
@@ -75,8 +75,7 @@ root.mainloop()
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ########6 - Display the wave from file - needs modified
 # audioSpectrum mono only
 # import numpy as np
@@ -90,9 +89,6 @@ root.mainloop()
 # plt.ylabel('Frequency (Hz)')
 # cbar.set_label('Intensity (dB)')
 # plt.show()
-=======
-=======
->>>>>>> main
 #######1 - Modify the following to get the file
 import tkinter as tk
 from tkinter import ttk
