@@ -90,18 +90,18 @@ root.mainloop()
 # cbar.set_label('Intensity (dB)')
 # plt.show()
 #######1 - Modify the following to get the file
-import tkinter as tk
-from tkinter import ttk
-from tkinter import filedialog as fd
-from tkinter.messagebox import showinfo
+# import tkinter as tk
+# from tkinter import ttk
+# from tkinter import filedialog as fd
+# from tkinter.messagebox import showinfo
 
-gfile = ''
+# gfile = ''
 
 # create the root window
-root = tk.Tk()
-root.title('Tkinter Open File Dialog')
-root.resizable(False, False)
-root.geometry('300x150')
+# root = tk.Tk()
+# root.title('Tkinter Open File Dialog')
+# root.resizable(False, False)
+# root.geometry('300x150')
 '''
 tkinter.filedialog.askopenfilenames(**options)
 Create an Open dialog and
@@ -111,66 +111,60 @@ screenshot
 screenshot
 '''
 
-def select_file():
-    filetypes = (('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('WAV files', '*.wav'), ('All files', '*.*'))
-    filename = fd.askopenfilename(title = 'Open a file', initialdir = '/', filetypes=filetypes)
-    gfile = filename
+# def select_file():
+    # filetypes = (('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('WAV files', '*.wav'), ('All files', '*.*'))
+    # filename = fd.askopenfilename(title = 'Open a file', initialdir = '/', filetypes=filetypes)
+    # gfile = filename
     
     # tkinter.messagebox — Tkinter message prompts
     #placeholder 1
-    showinfo(title='Selected File', message = filename)
+    # showinfo(title='Selected File', message = filename)
     
     #placeholder 2
-    gfile_label = ttk.Label(root, text=gfile)
-    gfile_label.pack(side="bottom")
+    # gfile_label = ttk.Label(root, text=gfile)
+    # gfile_label.pack(side="bottom")
     
 # open button
-open_button = ttk.Button(root, text='Open a File', command = select_file)
-open_button.pack(expand = True)
+# open_button = ttk.Button(root, text='Open a File', command = select_file)
+# open_button.pack(expand = True)
 # run the application
-root.mainloop()
+# root.mainloop()
 
 ####### 2 - If: the file is not .wav (aac or mp3) -> Convert to .wav -> 3
 
 ### mp3 to wav
-from pydub import AudioSegment
+# from pydub import AudioSegment
 
-def convert_mp3_to_wav(mp3_file, wav_file):
+# def convert_mp3_to_wav(mp3_file, wav_file):
     # Load the MP3 file
-    audio = AudioSegment.from_mp3(mp3_file)
+    # audio = AudioSegment.from_mp3(mp3_file)
 
     # Export the audio to WAV format
-    audio.export(wav_file, format="wav")
+    # audio.export(wav_file, format="wav")
 
 # Example usage
-mp3_file_path = "input.mp3"
-wav_file_path = "output.wav"
+# mp3_file_path = "input.mp3"
+# wav_file_path = "output.wav"
 
-convert_mp3_to_wav(mp3_file_path, wav_file_path)
+# convert_mp3_to_wav(mp3_file_path, wav_file_path)
 
 ### aac to wav
-from pydub import AudioSegment
+# from pydub import AudioSegment
 
-def convert_aac_to_wav(aac_file, wav_file):
+# def convert_aac_to_wav(aac_file, wav_file):
     # Load the AAC file
-    audio = AudioSegment.from_file(aac_file, format="aac")
+    # audio = AudioSegment.from_file(aac_file, format="aac")
 
     # Export the audio to WAV format
-    audio.export(wav_file, format="wav")
+    # audio.export(wav_file, format="wav")
 
 # Example usage
-aac_file_path = "input.aac"
-wav_file_path = "output.wav"
+# aac_file_path = "input.aac"
+# wav_file_path = "output.wav"
 
-convert_aac_to_wav(aac_file_path, wav_file_path)
-
-
+# convert_aac_to_wav(aac_file_path, wav_file_path)
 
 
-<<<<<<< HEAD
->>>>>>> main
-=======
-=======
 ########6 - Display the wave from file - needs modified
 # audioSpectrum mono only
 # import numpy as np
@@ -184,76 +178,74 @@ convert_aac_to_wav(aac_file_path, wav_file_path)
 # plt.ylabel('Frequency (Hz)')
 # cbar.set_label('Intensity (dB)')
 # plt.show()
->>>>>>> 68609f549531b7541cd4b1340f2468774e9955ce
->>>>>>> main
 
 # ReverbTime 0
 # From Lec 25 slides
 
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.io import wavfile
+# import numpy as np
+# import matplotlib.pyplot as plt
+# from scipy.io import wavfile
 
-sample_rate, data = wavfile.read("filename.wav")
+# sample_rate, data = wavfile.read("filename.wav")
 
 # select a frequency under 1kHz
-def find_target_freqeuncy(freqs):
-    for x in freqs:
-        if x > 1000:
-            break
-    return x
+# def find_target_freqeuncy(freqs):
+    # for x in freqs:
+        # if x > 1000:
+            # break
+    # return x
 
-def frequency_check():
+# def frequency_check():
     # identify a frequency to check
     # print(freqs)
-    global target_frequency
-    target_frequency = find_target_freqeuncy(freqs)
-    index_of_frequency = np.where(freqs == target_frequency)[0][0]
+    # global target_frequency
+    # target_frequency = find_target_freqeuncy(freqs)
+    # index_of_frequency = np.where(freqs == target_frequency)[0][0]
     # find sound data for a particular frequency
-    data_for_frequency = spectrum[index_of_frequency]
+    # data_for_frequency = spectrum[index_of_frequency]
     # change a digital signal for a value in decibels
-    data_in_db_fun = 10 * np.log10(data_for_frequency)
-    return data_in_db_fun
+    # data_in_db_fun = 10 * np.log10(data_for_frequency)
+    # return data_in_db_fun
 
-data_in_db = frequency_check()
-plt.figure(2)
+# data_in_db = frequency_check()
+# plt.figure(2)
 
-plt.plot(t, data_in_db, linewidth=1, alpha=0.7, color='#004bc6')
+# plt.plot(t, data_in_db, linewidth=1, alpha=0.7, color='#004bc6')
 
-plt.xlabel('Time (s)')
-plt.ylabel('Power (dB)')
+# plt.xlabel('Time (s)')
+# plt.ylabel('Power (dB)')
 
 # find an index of maxvalue
-index_of_max = np.argmax(data_in_db)
-value_of_max = data_in_db[index_of_max]
-plt.plot(t[index_of_max], data_in_db[index_of_max], 'go')
+# index_of_max = np.argmax(data_in_db)
+# value_of_max = data_in_db[index_of_max]
+# plt.plot(t[index_of_max], data_in_db[index_of_max], 'go')
 
 # slice our array from a max value
-sliced_array = data_in_db[index_of_max:]
-value_of_max_less_5 = value_of_max - 5
+# sliced_array = data_in_db[index_of_max:]
+# value_of_max_less_5 = value_of_max - 5
 
 # find a nearest value of less 5db
-def find_nearest_value(array, value):
-    array = np.asarray(array)
-    idx = (np.abs(array - value)).argmin()
-    return array[idx]
+# def find_nearest_value(array, value):
+    # array = np.asarray(array)
+    # idx = (np.abs(array - value)).argmin()
+    # return array[idx]
 
-value_of_max_less_5 = find_nearest_value(sliced_array, value_of_max_less_5)
-index_of_max_less_5 = np.where(data_in_db == value_of_max_less_5)
-plt.plot(t[index_of_max_less_5], data_in_db[index_of_max_less_5], 'yo')
+# value_of_max_less_5 = find_nearest_value(sliced_array, value_of_max_less_5)
+# index_of_max_less_5 = np.where(data_in_db == value_of_max_less_5)
+# plt.plot(t[index_of_max_less_5], data_in_db[index_of_max_less_5], 'yo')
 
 # slice array from max-5dB
-value_of_max_less_25 = value_of_max - 25
-value_of_max_less_25 = find_nearest_value(sliced_array, value_of_max_less_25)
-index_of_max_less_25 = np.where(data_in_db == value_of_max_less_25)
-plt.plot(t[index_of_max_less_25], data_in_db[index_of_max_less_25], 'ro')
+# value_of_max_less_25 = value_of_max - 25
+# value_of_max_less_25 = find_nearest_value(sliced_array, value_of_max_less_25)
+# index_of_max_less_25 = np.where(data_in_db == value_of_max_less_25)
+# plt.plot(t[index_of_max_less_25], data_in_db[index_of_max_less_25], 'ro')
 
-rt20 = (t[index_of_max_less_5] - t[index_of_max_less_25])[0]
+# rt20 = (t[index_of_max_less_5] - t[index_of_max_less_25])[0]
 # print(f'rt20 = {rt20}')
-rt60 = 3 * rt20
+# rt60 = 3 * rt20
 # plt.xlim(0, ((round(abs(rt60), 2)) * 1.5))
-plt.grid()
+# plt.grid()
 
-plt.show()
+# plt.show()
 
-print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(rt60), 2)} seconds')
+# print(f'The RT60 reverb time at freq {int(target_frequency)}Hz is {round(abs(rt60), 2)} seconds')
