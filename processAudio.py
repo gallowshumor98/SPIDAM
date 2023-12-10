@@ -6,7 +6,6 @@
 
 from pydub import AudioSegment
 import wave
-from pydub.playback import play
 
 class AudioProcessor:
     def __init__(self, audio_file):
@@ -44,9 +43,6 @@ class AudioProcessor:
 
         # Export the processed audio to a new WAV file
         processed_audio.export(output_wav_file, format="wav")
-
-        # Play the processed audio
-        play(processed_audio)
 
 # Example usage
 if __name__ == "__main__":
