@@ -87,6 +87,7 @@ root.mainloop()
 # plt.show()
 
 # ReverbTime 0
+# From Lec 25 slides
 
 import numpy as np
 import matplotlib.pyplot as plt
