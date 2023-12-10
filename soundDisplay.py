@@ -50,3 +50,22 @@ class WaveformPlotter:
         highest_resonance_freq = np.abs(frequencies[max_index])
 
         print('Highest Resonance Frequency: {:.2f} Hz'.format(highest_resonance_freq))
+        
+        # Define frequency ranges
+        low_freq_range = (20, 200)
+        mid_freq_range = (200, 2000)
+        high_freq_range = (2000, 20000)
+
+        # Find indices corresponding to each frequency range
+        low_indices = np.where((frequencies >= low_freq_range[0]) & (frequencies <= low_freq_range[1]))[0]
+        mid_indices = np.where((frequencies >= mid_freq_range[0]) & (frequencies <= mid_freq_range[1]))[0]
+        high_indices = np.where((frequencies >= high_freq_range[0]) & (frequencies <= high_freq_range[1]))[0]
+
+        # Compute the average amplitude in each frequency range
+        low_amplitude = np.mean(np.abs(spectrum[low_indices]))
+        mid_amplitude = np.mean(np.abs(spectrum[mid_indices]))
+        high_amplitude = np.mean(np.abs(spectrum[high_indices]))
+
+        print('Low-Frequency Amplitude: {:.2f} Hz'.format(np.abs(frequencies[low_indices[np.argmax(np.abs(spectrum[low_indices]))]])))
+        print('Mid-Frequency Amplitude: {:.2f} Hz'.format(np.abs(frequencies[mid_indices[np.argmax(np.abs(spectrum[mid_indices]))]])))
+        print('High-Frequency Amplitude: {:.2f} Hz'.format(np.abs(frequencies[high_indices[np.argmax(np.abs(spectrum[high_indices]))]])))
