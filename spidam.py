@@ -149,19 +149,7 @@ convert_aac_to_wav(aac_file_path, wav_file_path)
 
 
 
-########6 - Display the wave from file - needs modified
-# audioSpectrum mono only
-# import numpy as np
-# import matplotlib.pyplot as plt
-# from scipy.io import wavfile
-# sample_rate, data = wavfile.read('16bitmono.wav')
-# spectrum, freqs, t, im = plt.specgram(data, Fs=sample_rate, \
-# NFFT=1024, cmap=plt.get_cmap('autumn_r'))
-# cbar = plt.colorbar(im)
-# plt.xlabel('Time (s)')
-# plt.ylabel('Frequency (Hz)')
-# cbar.set_label('Intensity (dB)')
-# plt.show()
+
 
 # ReverbTime 0
 
