@@ -1,16 +1,19 @@
-# 1 - Load audio file, use a button to open it -> display the name of the file
-# 2 - If: the file is not .wav -> Convert to .wav -> 3
-# 3 - If: Check for meta or multi channel
-# 4 -   True: Remove meta or handle multi channel -> 5
-# 5 -   False: Display time value of .wav in seconds
-# 6 - Display wave form of .wav
-# 7 - Compute highest resonance and display frequency value in Hz
-# 8 - Compute Low, Mid, High frequency
-# 9 - Display plot of RT60 for Low, Mid, High frequecies
-#     9.5 - Extra Credit - Button to Alternate through Low, Mid, High plots
-# 10 - Button to combine plots into single plot
-# 11 - Show difference in RT60 value to reduce to .5 seconds
-# 12 - Add button and additional visual output for useful data (your choice)
+#### Done in GUI 1 - Load audio file, use a button to open it -> display the name of the file
+
+#### Implement processAudio.py
+# Check if wav
+#    If mp3 or aac -> Convert to wav
+# Check if has meta or multi channel
+#    If yes -> remove meta or handle multi channel
+
+#### After processing, display wave form of wav file
+# Compute highest resonance and display frequency value in Hz
+# Compute Low, Mid, High frequency
+# Display plot of RT60 for Low, Mid, High frequecies
+#      Extra Credit - Button to Alternate through Low, Mid, High plots
+# Button to combine plots into single plot
+# Show difference in RT60 value to reduce to .5 seconds
+# Add button and additional visual output for useful data (your choice)
 
 
 
