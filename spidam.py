@@ -57,6 +57,7 @@ def select_file():
 def plot_data():
     sound_display = WaveformPlotter(gfile)
     sound_display.plot_waveform()
+    sound_display.compute_highest_resonance()
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
