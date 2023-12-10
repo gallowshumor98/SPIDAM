@@ -72,6 +72,7 @@ root.mainloop()
 
 
 
+<<<<<<< HEAD
 ########6 - Display the wave from file - needs modified
 # audioSpectrum mono only
 # import numpy as np
@@ -85,6 +86,86 @@ root.mainloop()
 # plt.ylabel('Frequency (Hz)')
 # cbar.set_label('Intensity (dB)')
 # plt.show()
+=======
+#######1 - Modify the following to get the file
+import tkinter as tk
+from tkinter import ttk
+from tkinter import filedialog as fd
+from tkinter.messagebox import showinfo
+
+gfile = ''
+
+# create the root window
+root = tk.Tk()
+root.title('Tkinter Open File Dialog')
+root.resizable(False, False)
+root.geometry('300x150')
+'''
+tkinter.filedialog.askopenfilenames(**options)
+Create an Open dialog and
+return the selected filename(s) that correspond to
+existing file(s).
+screenshot
+screenshot
+'''
+
+def select_file():
+    filetypes = (('MP3 files', '*.mp3'), ('AAC files', '*.aac'), ('WAV files', '*.wav'), ('All files', '*.*'))
+    filename = fd.askopenfilename(title = 'Open a file', initialdir = '/', filetypes=filetypes)
+    gfile = filename
+    
+    # tkinter.messagebox — Tkinter message prompts
+    #placeholder 1
+    showinfo(title='Selected File', message = filename)
+    
+    #placeholder 2
+    gfile_label = ttk.Label(root, text=gfile)
+    gfile_label.pack(side="bottom")
+    
+# open button
+open_button = ttk.Button(root, text='Open a File', command = select_file)
+open_button.pack(expand = True)
+# run the application
+root.mainloop()
+
+####### 2 - If: the file is not .wav (aac or mp3) -> Convert to .wav -> 3
+
+### mp3 to wav
+from pydub import AudioSegment
+
+def convert_mp3_to_wav(mp3_file, wav_file):
+    # Load the MP3 file
+    audio = AudioSegment.from_mp3(mp3_file)
+
+    # Export the audio to WAV format
+    audio.export(wav_file, format="wav")
+
+# Example usage
+mp3_file_path = "input.mp3"
+wav_file_path = "output.wav"
+
+convert_mp3_to_wav(mp3_file_path, wav_file_path)
+
+### aac to wav
+from pydub import AudioSegment
+
+def convert_aac_to_wav(aac_file, wav_file):
+    # Load the AAC file
+    audio = AudioSegment.from_file(aac_file, format="aac")
+
+    # Export the audio to WAV format
+    audio.export(wav_file, format="wav")
+
+# Example usage
+aac_file_path = "input.aac"
+wav_file_path = "output.wav"
+
+convert_aac_to_wav(aac_file_path, wav_file_path)
+
+
+
+
+>>>>>>> main
 
 # ReverbTime 0
 # From Lec 25 slides
