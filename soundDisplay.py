@@ -53,4 +53,59 @@ class WaveformPlotter:
 
         plt.tight_layout()
         plt.show()
+    
+    def plot_high
+        if self.audio_array is None or self.time_axis is None:
+            self.read_wave_file()
+
+        # Plot the waveform
+        plt.plot(self.time_axis, self.audio_array)
+        plt.title('High Frequencies of {}'.format(self.wave_file))
+        plt.xlabel('Time (s)')
+        plt.ylabel('Amplitude')
         
+        # Perform frequency domain analysis using Fast Fourier Transform (FFT)
+        spectrum = np.fft.fft(self.audio_array)
+        frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
+    
+    def plot_mid
+        if self.audio_array is None or self.time_axis is None:
+            self.read_wave_file()
+
+        # Plot the waveform
+        plt.plot(self.time_axis, self.audio_array)
+        plt.title('High Frequencies of {}'.format(self.wave_file))
+        plt.xlabel('Time (s)')
+        plt.ylabel('Amplitude')
+        
+        # Perform frequency domain analysis using Fast Fourier Transform (FFT)
+        spectrum = np.fft.fft(self.audio_array)
+        frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
+    
+    def plot_low
+        if self.audio_array is None or self.time_axis is None:
+            self.read_wave_file()
+
+        # Plot the waveform
+        plt.plot(self.time_axis, self.audio_array)
+        plt.title('High Frequencies of {}'.format(self.wave_file))
+        plt.xlabel('Time (s)')
+        plt.ylabel('Amplitude')
+        
+        # Perform frequency domain analysis using Fast Fourier Transform (FFT)
+        spectrum = np.fft.fft(self.audio_array)
+        frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
+    
+    def plot_choice
+        if self.audio_array is None or self.time_axis is None:
+            self.read_wave_file()
+
+        # Plot the waveform
+        plt.plot(self.time_axis, self.audio_array)
+        plt.title('High Frequencies of {}'.format(self.wave_file))
+        plt.xlabel('Time (s)')
+        plt.ylabel('Amplitude')
+        
+        # Perform frequency domain analysis using Fast Fourier Transform (FFT)
+        spectrum = np.fft.fft(self.audio_array)
+        frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
