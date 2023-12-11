@@ -70,12 +70,6 @@ class WaveformPlotter:
 
         return rt60_values
         
-        
-        
-        
-        
-        
-
     def plot_high(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
@@ -89,7 +83,7 @@ class WaveformPlotter:
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
         plt.ylabel('Frequency (hz)')
-        plt.scatter([0.244], [5693], label='5693hz', color='red', zorder=2)
+        plt.scatter([0.240], [5693], label='5693hz', color='red', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
@@ -97,12 +91,6 @@ class WaveformPlotter:
         plt.tight_layout()
         plt.show()
 
-    
-    
-    
-    
-    
-    
     def plot_mid(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
@@ -123,11 +111,7 @@ class WaveformPlotter:
 
         plt.tight_layout()
         plt.show()
-    
-    
-    
-    
-    
+
     def plot_low(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
@@ -148,13 +132,41 @@ class WaveformPlotter:
 
         plt.tight_layout()
         plt.show()
-    
-    
-    
-    
+        
+        
+        
+        
+        
+        
+    def plot_combined(self, window_size=500):
+        if self.audio_array is None or self.time_axis is None:
+            self.read_wave_file()
 
-    
-    
+        # Compute RT60 values
+        rt60_values = self.rt60(self.audio_array, window_size)
+
+        # Plot RT60 values
+        time_rt60 = np.arange(0, len(self.audio_array), window_size) / len(self.audio_array) * self.time_axis[-1]
+        plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
+        plt.title('RT60 Over Time of {}'.format(self.wave_file))
+        plt.xlabel('Time (s)')
+        plt.ylabel('Frequency (hz)')
+        plt.scatter([0.244], [5693], label='5693hz', color='red', zorder=2)
+        plt.scatter([0.645], [2353], label='2353hz', color='green', zorder=2)
+        plt.scatter([1.417], [180], label='185hz', color='yellow', zorder=2)
+        tick_positions = np.arange(0, self.time_axis[-1], 0.5)
+        plt.xticks(tick_positions)
+        plt.legend()
+
+        plt.tight_layout()
+        plt.show()
+        
+        
+        
+        
+        
+        
+
     def plot_choice(self):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()

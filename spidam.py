@@ -79,6 +79,10 @@ def low():
 def mid():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_mid()
+    
+def combined():
+    sound_display = WaveformPlotter(gfile)  
+    sound_display.plot_combined()
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
@@ -101,7 +105,7 @@ mid_button.grid(row=3, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 high_button = ttk.Button(root, text='High', command=high, state="disabled")
 high_button.grid(row=3, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
-combined_button = ttk.Button(root, text='Combined', command=low, state="disabled")
+combined_button = ttk.Button(root, text='Combined', command=combined, state="disabled")
 combined_button.grid(row=4, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 
 other_button = ttk.Button(root, text='Other', command=low, state="disabled")
