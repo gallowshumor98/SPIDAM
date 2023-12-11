@@ -84,7 +84,7 @@ gfile_label.grid(row=1, column=0, columnspan=3, pady=5, padx=5, sticky='ew')
 
 # Plot button (initially disabled)
 plot_button = ttk.Button(root, text='Waveform', command=plot_data, state="disabled")
-plot_button.grid(row=2, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
+plot_button.grid(row=4, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
 low_button = ttk.Button(root, text='Low', command=process_low, state="disabled")
 low_button.grid(row=3, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
@@ -99,7 +99,7 @@ combined_button = ttk.Button(root, text='Combined', command=process_low, state="
 combined_button.grid(row=4, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 
 other_button = ttk.Button(root, text='Other', command=process_low, state="disabled")
-other_button.grid(row=4, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
+other_button.grid(row=4, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
