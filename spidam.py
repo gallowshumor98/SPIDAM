@@ -115,7 +115,7 @@ combined_button = ttk.Button(root, text='Combined', command=combined, state="dis
 combined_button.grid(row=4, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 
 # Other button (initially disabled)
-other_button = ttk.Button(root, text='Other', command=choice, state="disabled")
+other_button = ttk.Button(root, text='Spectrogram', command=choice, state="disabled")
 other_button.grid(row=4, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
 root.columnconfigure(0, weight=1)
