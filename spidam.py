@@ -1,6 +1,5 @@
-#### Done in GUI 1 - Load audio file, use a button to open it -> display the name of the file
-
-#### Implement processAudio.py
+#### Complete GUI - Load audio file, use a button to open it -> display the name of the file
+#### Implement processAudio.py -- Complete
 # Check if wav
 #    If mp3 or aac -> Convert to wav
 # Check if has meta or multi channel
@@ -15,7 +14,7 @@
 # Show difference in RT60 value to reduce to .5 seconds
 # Add button and additional visual output for useful data (your choice)
 
-##### GUI - Trying to Implement
+##### GUI
 # main.py
 from soundDisplay import WaveformPlotter
 from processAudio import AudioProcessor
@@ -44,11 +43,11 @@ def select_file():
 
     # Process the audio file
     #Convert to wav - Complete
-    if gfile.lower().endswith(('.mp3', '.aac')):
-        audio_processor = AudioProcessor(gfile, os.path.splitext(gfile)[0] + '_converted.wav')
-        audio_processor.convert_to_wav()
-        gfile = audio_processor.output_file  # Update gfile with the converted file path
-
+    audio_processor = AudioProcessor(gfile, os.path.splitext(gfile)[0] + '_converted.wav')
+    audio_processor.process()
+    gfile = audio_processor.output_file  # Update gfile with the converted file path
+    
+    
     # Update label with the selected file path
     gfile_label.config(text=gfile)
 
