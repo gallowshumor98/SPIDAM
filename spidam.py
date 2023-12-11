@@ -59,9 +59,10 @@ def select_file():
     showinfo(title='Selected File', message=gfile)
 
 def plot_data():
-    sound_display = WaveformPlotter(gfile)
+    sound_display = WaveformPlotter(gfile)  
     sound_display.plot_waveform()
     sound_display.compute_highest_resonance()
+    sound_display.plot_rt60()
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
