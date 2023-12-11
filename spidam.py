@@ -66,18 +66,12 @@ def select_file():
 def plot_data():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_waveform()
-    sound_display.compute_highest_resonance()
-<<<<<<< HEAD
+   # sound_display.compute_highest_resonance()
     
-=======
-
 def process_low():
     # Placeholder for processing audio for the 'Low' action
     showinfo(title='Audio Processing', message='Processing audio for action: Low')
 
-
-
->>>>>>> main
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
 open_button.grid(row=0, column=1, pady=5, padx=5, sticky='ew')

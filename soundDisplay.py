@@ -33,13 +33,7 @@ class WaveformPlotter:
         plt.title('Waveform of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
-        plt.tight_layout()
-        plt.show()
-
-    def compute_highest_resonance(self):
-        if self.audio_array is None or self.time_axis is None:
-            self.read_wave_file()
-
+        
         # Perform frequency domain analysis using Fast Fourier Transform (FFT)
         spectrum = np.fft.fft(self.audio_array)
         frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
@@ -49,8 +43,14 @@ class WaveformPlotter:
 
         # Compute the corresponding frequency in Hz
         highest_resonance_freq = np.abs(frequencies[max_index])
+        
+        # Display highest frequency as text annotation
+        plt.annotate('Highest Resonance: {:.2f} Hz'.format(highest_resonance_freq),
+                     xy=(0.5, 0.95), xycoords='axes fraction',
+                     ha='center', va='center',
+                     bbox=dict(boxstyle='round', alpha=0.1),
+                     fontsize=10)
 
-        print('Highest Resonance Frequency: {:.2f} Hz'.format(highest_resonance_freq))
+        plt.tight_layout()
+        plt.show()
         
-        
-    
