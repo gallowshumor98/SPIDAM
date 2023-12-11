@@ -67,6 +67,10 @@ def plot_data():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_waveform()
    # sound_display.compute_highest_resonance()
+   
+def high():
+    sound_display = WaveformPlotter(gfile)  
+    sound_display.plot_high()
     
 def process_low():
     # Placeholder for processing audio for the 'Low' action
@@ -90,7 +94,7 @@ low_button.grid(row=3, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 mid_button = ttk.Button(root, text='Mid', command=process_low, state="disabled")
 mid_button.grid(row=3, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
-high_button = ttk.Button(root, text='High', command=process_low, state="disabled")
+high_button = ttk.Button(root, text='High', command=high, state="disabled")
 high_button.grid(row=3, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
 combined_button = ttk.Button(root, text='Combined', command=process_low, state="disabled")

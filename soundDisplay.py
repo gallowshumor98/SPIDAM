@@ -54,7 +54,8 @@ class WaveformPlotter:
         plt.tight_layout()
         plt.show()
     
-    def plot_high
+    def plot_high(self):
+        threshold = 2000
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
 
@@ -78,7 +79,7 @@ class WaveformPlotter:
         plt.ylabel('Amplitude')
         plt.show()
     
-    def plot_mid
+    def plot_mid(self):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
 
@@ -92,7 +93,7 @@ class WaveformPlotter:
         spectrum = np.fft.fft(self.audio_array)
         frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
     
-    def plot_low
+    def plot_low(self):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
 
@@ -106,7 +107,7 @@ class WaveformPlotter:
         spectrum = np.fft.fft(self.audio_array)
         frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
     
-    def plot_choice
+    def plot_choice(self):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
 
