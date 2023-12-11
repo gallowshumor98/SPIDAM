@@ -52,7 +52,7 @@ def select_file():
     # Update label with the selected file path
     gfile_label.config(text=gfile)
 
-    # Enable the 'Plot' button
+    # Enable the 'Waveform' button
     plot_button.config(state="normal")
     low_button.config(state="normal")
     mid_button.config(state="normal")
@@ -72,9 +72,13 @@ def high():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_high()
     
-def process_low():
-    # Placeholder for processing audio for the 'Low' action
-    showinfo(title='Audio Processing', message='Processing audio for action: Low')
+def low():
+    sound_display = WaveformPlotter(gfile)  
+    sound_display.plot_low()
+    
+def mid():
+    sound_display = WaveformPlotter(gfile)  
+    sound_display.plot_mid()
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
@@ -88,19 +92,19 @@ gfile_label.grid(row=1, column=0, columnspan=3, pady=5, padx=5, sticky='ew')
 plot_button = ttk.Button(root, text='Waveform', command=plot_data, state="disabled")
 plot_button.grid(row=4, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
-low_button = ttk.Button(root, text='Low', command=process_low, state="disabled")
+low_button = ttk.Button(root, text='Low', command=low, state="disabled")
 low_button.grid(row=3, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 
-mid_button = ttk.Button(root, text='Mid', command=process_low, state="disabled")
+mid_button = ttk.Button(root, text='Mid', command=mid, state="disabled")
 mid_button.grid(row=3, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
 high_button = ttk.Button(root, text='High', command=high, state="disabled")
 high_button.grid(row=3, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
-combined_button = ttk.Button(root, text='Combined', command=process_low, state="disabled")
+combined_button = ttk.Button(root, text='Combined', command=low, state="disabled")
 combined_button.grid(row=4, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 
-other_button = ttk.Button(root, text='Other', command=process_low, state="disabled")
+other_button = ttk.Button(root, text='Other', command=low, state="disabled")
 other_button.grid(row=4, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
 root.columnconfigure(0, weight=1)

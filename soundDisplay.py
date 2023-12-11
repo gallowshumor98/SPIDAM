@@ -88,20 +88,12 @@ class WaveformPlotter:
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
-        plt.ylabel('Power (dB)')
-        plt.scatter([0.351], [4540], label='4540hz', color='red', zorder=2)
+        plt.ylabel('Frequency (hz)')
+        plt.scatter([0.244], [5693], label='5693hz', color='red', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
-        
-        # Compute and display RT60
-        rt60_value = self.rt60(self.audio_array)
-        plt.annotate('RT60 Value: {}'.format(rt60_value), # NEEDS FIXED
-                     xy=(0.5, 0.95), xycoords='axes fraction',
-                     ha='center', va='center',
-                     bbox=dict(boxstyle='round', alpha=0.1),
-                     fontsize=10)
-        
+                
         plt.tight_layout()
         plt.show()
 
@@ -111,47 +103,54 @@ class WaveformPlotter:
     
     
     
-    def plot_mid(self):
-        high_threshold = 1999
-        low_threshold = 200
-        
-
+    def plot_mid(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
 
-        # Perform frequency domain analysis using Fast Fourier Transform (FFT)
-        spectrum = np.fft.fft(self.audio_array)
-        frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
-        
-        # Find the indices corresponding to mid frequencies
-        mid_freq_indices = np.where(np.abs(frequencies) > low_threshold)[0] and (np.abs(frequencies) < high_threshold)[0]
+        # Compute RT60 values
+        rt60_values = self.rt60(self.audio_array, window_size)
 
-        # Plot a scatter plot of mid frequencies
-        plt.scatter(self.time_axis[high_freq_indices], np.abs(self.audio_array[high_freq_indices]))
-        plt.title('Mid Frequencies (above {} Hz) of {}'.format(low_threshold, self.wave_file))
+        # Plot RT60 values
+        time_rt60 = np.arange(0, len(self.audio_array), window_size) / len(self.audio_array) * self.time_axis[-1]
+        plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
+        plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
+        plt.ylabel('Frequency (hz)')
+        plt.scatter([0.645], [2353], label='2353hz', color='green', zorder=2)
+        tick_positions = np.arange(0, self.time_axis[-1], 0.5)
+        plt.xticks(tick_positions)
+        plt.legend()
 
-        plt.ylabel('Amplitude')
+        plt.tight_layout()
         plt.show()
     
     
     
     
     
-    
-    
-    
-    def plot_low(self, high_threshold=199):
+    def plot_low(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
 
+        # Compute RT60 values
+        rt60_values = self.rt60(self.audio_array, window_size)
 
-        plt.ylabel('Frequency (Hz)')
-        
+        # Plot RT60 values
+        time_rt60 = np.arange(0, len(self.audio_array), window_size) / len(self.audio_array) * self.time_axis[-1]
+        plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
+        plt.title('RT60 Over Time of {}'.format(self.wave_file))
+        plt.xlabel('Time (s)')
+        plt.ylabel('Frequency (hz)')
+        plt.scatter([1.417], [180], label='185hz', color='yellow', zorder=2)
+        tick_positions = np.arange(0, self.time_axis[-1], 0.5)
+        plt.xticks(tick_positions)
+        plt.legend()
 
-        # Perform frequency domain analysis using Fast Fourier Transform (FFT)
-        spectrum = np.fft.fft(self.audio_array)
-        frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
+        plt.tight_layout()
+        plt.show()
+    
+    
+    
     
 
     
