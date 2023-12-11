@@ -82,7 +82,7 @@ class WaveformPlotter:
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
-        plt.ylabel('Frequency (hz)')
+        plt.ylabel('Amplitude')
         plt.scatter([0.240], [5693], label='5693hz', color='red', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
@@ -103,7 +103,7 @@ class WaveformPlotter:
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
-        plt.ylabel('Frequency (hz)')
+        plt.ylabel('Amplitude')
         plt.scatter([0.645], [2353], label='2353hz', color='green', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
@@ -124,7 +124,7 @@ class WaveformPlotter:
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
-        plt.ylabel('Frequency (hz)')
+        plt.ylabel('Amplitude')
         plt.scatter([1.417], [180], label='185hz', color='yellow', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
@@ -132,12 +132,7 @@ class WaveformPlotter:
 
         plt.tight_layout()
         plt.show()
-        
-        
-        
-        
-        
-        
+ 
     def plot_combined(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
@@ -150,7 +145,7 @@ class WaveformPlotter:
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
-        plt.ylabel('Frequency (hz)')
+        plt.ylabel('Amplitude')
         plt.scatter([0.244], [5693], label='5693hz', color='red', zorder=2)
         plt.scatter([0.645], [2353], label='2353hz', color='green', zorder=2)
         plt.scatter([1.417], [180], label='185hz', color='yellow', zorder=2)
