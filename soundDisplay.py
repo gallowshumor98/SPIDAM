@@ -2,6 +2,8 @@
 import wave
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.signal import spectrogram
+from scipy.io import wavfile
 
 class WaveformPlotter:
     def __init__(self, wave_file):
@@ -27,7 +29,8 @@ class WaveformPlotter:
     def plot_waveform(self):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-
+        
+        plt.clf()
         # Plot the waveform
         plt.plot(self.time_axis, self.audio_array)
         plt.title('Waveform of {}'.format(self.wave_file))
@@ -73,7 +76,8 @@ class WaveformPlotter:
     def plot_high(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-
+        
+        plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
 
@@ -94,7 +98,8 @@ class WaveformPlotter:
     def plot_mid(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-
+        
+        plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
 
@@ -115,7 +120,8 @@ class WaveformPlotter:
     def plot_low(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-
+        
+        plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
 
@@ -136,7 +142,8 @@ class WaveformPlotter:
     def plot_combined(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-
+        
+        plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
 
@@ -163,22 +170,21 @@ class WaveformPlotter:
         plt.tight_layout()
         plt.show()
         
-        
-        
-        
-        
-        
-
+    # Plot spectrogram
     def plot_choice(self):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
+        
+        plt.clf()
+        sampling_rate, audio_data = wavfile.read(self.wave_file)
+        
+        # Compute the spectrogram
+        frequencies, times, spectrogram_data = spectrogram(audio_data, fs=sampling_rate)
 
-        # Plot the waveform
-        plt.plot(self.time_axis, self.audio_array)
-        plt.title('High Frequencies of {}'.format(self.wave_file)) ## CHANGE TITLE
-        plt.xlabel('Time (s)')
-        plt.ylabel('Amplitude')
-
-        # Perform frequency domain analysis using Fast Fourier Transform (FFT)
-        spectrum = np.fft.fft(self.audio_array)
-        frequencies = np.fft.fftfreq(len(spectrum), d=self.time_axis[1] - self.time_axis[0])
+        # Plot the spectrogram
+        plt.pcolormesh(times, frequencies, 10 * np.log10(spectrogram_data), shading='auto')
+        plt.ylabel('Frequency [Hz]')
+        plt.xlabel('Time [sec]')
+        plt.title('Spectrogram of Audio File')
+        plt.colorbar(label='Intensity [dB]')
+        plt.show()

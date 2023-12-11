@@ -14,7 +14,6 @@
 # Show difference in RT60 value to reduce to .5 seconds
 # Add button and additional visual output for useful data (your choice)
 
-##### GUI
 # main.py
 from soundDisplay import WaveformPlotter
 from processAudio import AudioProcessor
@@ -66,7 +65,6 @@ def select_file():
 def plot_data():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_waveform()
-   # sound_display.compute_highest_resonance()
    
 def high():
     sound_display = WaveformPlotter(gfile)  
@@ -83,6 +81,10 @@ def mid():
 def combined():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_combined()
+    
+def choice():
+    sound_display = WaveformPlotter(gfile)
+    sound_display.plot_choice()
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
@@ -96,19 +98,24 @@ gfile_label.grid(row=1, column=0, columnspan=3, pady=5, padx=5, sticky='ew')
 plot_button = ttk.Button(root, text='Waveform', command=plot_data, state="disabled")
 plot_button.grid(row=4, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
+# Low button (initially disabled)
 low_button = ttk.Button(root, text='Low', command=low, state="disabled")
 low_button.grid(row=3, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 
+# Mid button (initially disabled)
 mid_button = ttk.Button(root, text='Mid', command=mid, state="disabled")
 mid_button.grid(row=3, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
+# High button (initially disabled)
 high_button = ttk.Button(root, text='High', command=high, state="disabled")
 high_button.grid(row=3, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
+# Combined button (initially disabled)
 combined_button = ttk.Button(root, text='Combined', command=combined, state="disabled")
 combined_button.grid(row=4, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 
-other_button = ttk.Button(root, text='Other', command=low, state="disabled")
+# Other button (initially disabled)
+other_button = ttk.Button(root, text='Other', command=choice, state="disabled")
 other_button.grid(row=4, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 
 root.columnconfigure(0, weight=1)
@@ -117,5 +124,4 @@ root.columnconfigure(2, weight=1)
 
 # Run the application
 root.mainloop()
-###### End GUI
 
