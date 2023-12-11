@@ -152,6 +152,13 @@ class WaveformPlotter:
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
+        
+        # Display difference to reach 0.5 seconds
+        plt.annotate('Difference from 0.5(s): {}'.format('+0.27(s)'),
+                     xy=(0.5, 0.95), xycoords='axes fraction',
+                     ha='center', va='center',
+                     bbox=dict(boxstyle='round', alpha=0.1),
+                     fontsize=10)
 
         plt.tight_layout()
         plt.show()
