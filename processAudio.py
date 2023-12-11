@@ -7,10 +7,11 @@ class AudioProcessor:
         self.input_file = input_file
         self.output_file = output_file
 
-    def convert_to_wav(self):
-        # Load the audio file
-        audio = AudioSegment.from_file(self.input_file)
-
-        # Export the audio to WAV format
-        audio.export(self.output_file, format="wav")
-        print(f"Converted {self.input_file} to {self.output_file}")
+    def process(self):
+        raw_audio = AudioSegment.from_file(self.input_file)
+        channel_count = raw_audio.channels
+        print("Original Channels:", channel_count)
+        mono_audio = raw_audio.set_channels(1)
+        channel_count_mono = mono_audio.channels
+        print("Mono Channels:", channel_count_mono)
+        mono_audio.export(self.output_file, format="wav")  
