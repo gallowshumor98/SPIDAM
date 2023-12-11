@@ -58,12 +58,6 @@ class WaveformPlotter:
         threshold = 2000
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-
-        # Plot the waveform
-        plt.plot(self.time_axis, self.audio_array)
-        plt.title('High Frequencies of {}'.format(self.wave_file))
-        plt.xlabel('Time (s)')
-        plt.ylabel('Amplitude')
         
         # Perform frequency domain analysis using Fast Fourier Transform (FFT)
         spectrum = np.fft.fft(self.audio_array)
@@ -73,10 +67,10 @@ class WaveformPlotter:
         high_freq_indices = np.where(np.abs(frequencies) > threshold)[0]
 
         # Plot a scatter plot of high frequencies
-        plt.scatter(self.time_axis[high_freq_indices], np.abs(self.audio_array[high_freq_indices]))
+        plt.plot(self.time_axis[high_freq_indices], np.abs(self.audio_array[high_freq_indices]), linestyle='-', linewidth=2)
         plt.title('High Frequencies (above {} Hz) of {}'.format(threshold, self.wave_file))
         plt.xlabel('Time (s)')
-        plt.ylabel('Amplitude')
+        plt.ylabel('Frequency (Hz)')
         plt.show()
     
     def plot_mid(self):
