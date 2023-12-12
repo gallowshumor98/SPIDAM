@@ -76,22 +76,27 @@ class WaveformPlotter:
     def plot_high(self, window_size=500):
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-        
+
         plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
-
         # Plot RT60 values
         time_rt60 = np.arange(0, len(self.audio_array), window_size) / len(self.audio_array) * self.time_axis[-1]
+
+        # Find the index and value of the maximum amplitude
+        max_index = np.argmax(rt60_values)
+        max_amplitude = rt60_values[max_index]
+
+        # Plot graph
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
-        plt.scatter([0.240], [5693], label='5693hz', color='red', zorder=2)
+        plt.scatter([time_rt60[max_index]], [max_amplitude], label='Highest Frequency: {:.2f} Hz'.format(max_amplitude), color='red', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
-                
+
         plt.tight_layout()
         plt.show()
 
@@ -103,13 +108,33 @@ class WaveformPlotter:
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
 
+        # Find the index and value of the maximum amplitude
+        max_index = np.argmax(rt60_values)
+        max_amplitude = rt60_values[max_index]
+
+        # Find indices where RT60 values are positive
+        positive_indices = np.where(np.array(rt60_values) > 0)[0]
+        # Extract positive RT60 values
+        positive_rt60_values = np.array(rt60_values)[positive_indices]
+        # Find the index and value of the lowest positive RT60
+        min_index = positive_indices[np.argmin(positive_rt60_values)]
+        min_amplitude = np.min(positive_rt60_values)
+
+        # Find the index and value of the mid amplitude
+        median_amplitude = (min_amplitude + max_amplitude) / 2
+        median_index = np.argmin(np.abs(positive_rt60_values - median_amplitude))
+
+
         # Plot RT60 values
         time_rt60 = np.arange(0, len(self.audio_array), window_size) / len(self.audio_array) * self.time_axis[-1]
+        
+        
+        # Plot graph
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
-        plt.scatter([0.645], [2353], label='2353hz', color='green', zorder=2)
+        plt.scatter([time_rt60[median_index]], [median_amplitude], label='Median Frequency: {:.2f} Hz'.format(median_amplitude), color='green', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
@@ -124,6 +149,15 @@ class WaveformPlotter:
         plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
+        
+        # Find indices where RT60 values are positive
+        positive_indices = np.where(np.array(rt60_values) > 0)[0]
+        # Extract positive RT60 values
+        positive_rt60_values = np.array(rt60_values)[positive_indices]
+        # Find the index and value of the lowest positive RT60
+        min_index = positive_indices[np.argmin(positive_rt60_values)]
+        min_amplitude = np.min(positive_rt60_values)
+
 
         # Plot RT60 values
         time_rt60 = np.arange(0, len(self.audio_array), window_size) / len(self.audio_array) * self.time_axis[-1]
@@ -131,7 +165,7 @@ class WaveformPlotter:
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
-        plt.scatter([1.417], [180], label='185hz', color='yellow', zorder=2)
+        plt.scatter([time_rt60[min_index]], [min_amplitude], label='Lowest Frequency: {:.2f} Hz'.format(min_amplitude), color='yellow', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
@@ -149,13 +183,35 @@ class WaveformPlotter:
 
         # Plot RT60 values
         time_rt60 = np.arange(0, len(self.audio_array), window_size) / len(self.audio_array) * self.time_axis[-1]
+        
+        # Find the index and value of the maximum amplitude
+        max_index = np.argmax(rt60_values)
+        max_amplitude = rt60_values[max_index]
+        # Find the index and value of the maximum amplitude
+        max_index = np.argmax(rt60_values)
+        max_amplitude = rt60_values[max_index]
+
+        # Find indices where RT60 values are positive
+        positive_indices = np.where(np.array(rt60_values) > 0)[0]
+        # Extract positive RT60 values
+        positive_rt60_values = np.array(rt60_values)[positive_indices]
+        # Find the index and value of the lowest positive RT60
+        min_index = positive_indices[np.argmin(positive_rt60_values)]
+        min_amplitude = np.min(positive_rt60_values)
+
+        # Find the index and value of the mid amplitude
+        median_amplitude = (min_amplitude + max_amplitude) / 2
+        median_index = np.argmin(np.abs(positive_rt60_values - median_amplitude))
+
+        
+        # Plot graph
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
-        plt.scatter([0.244], [5693], label='5693hz', color='red', zorder=2)
-        plt.scatter([0.645], [2353], label='2353hz', color='green', zorder=2)
-        plt.scatter([1.417], [180], label='185hz', color='yellow', zorder=2)
+        plt.scatter([time_rt60[max_index]], [max_amplitude], label='Highest Frequency: {:.2f} Hz'.format(max_amplitude), color='red', zorder=2)
+        plt.scatter([time_rt60[median_index]], [median_amplitude], label='Median Frequency: {:.2f} Hz'.format(median_amplitude), color='green', zorder=2)
+        plt.scatter([time_rt60[min_index]], [min_amplitude], label='Lowest Frequency: {:.2f} Hz'.format(min_amplitude), color='yellow', zorder=2)
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
