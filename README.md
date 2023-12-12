@@ -10,7 +10,7 @@ The goal of this platform is to help resolve the problem of voice intelligibilit
 
 Simply download the .zip file and extract it to your preferred directory.
 
-## How It Works
+## How To Use
 
 This platform requires ffmpeg to be installed on your local machine. It can be downloaded here: https://www.gyan.dev/ffmpeg/builds/
 
