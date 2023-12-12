@@ -1,7 +1,7 @@
-#Scientific Python Interactive Data Acoustic Modeling Project (SPIDAM)
+# Scientific Python Interactive Data Acoustic Modeling Project (SPIDAM)
 ***
 
-##Overview
+## Overview
 ***
 
 SPIDAM is an interactive data analysis/modeling platform that allows users to visualize audio data using scientific calculations and data visualization tools.
@@ -9,13 +9,13 @@ SPIDAM is an interactive data analysis/modeling platform that allows users to vi
 The goal of this platform is to help resolve the problem of voice intelligibility in enclosed spaces that can be disruptive to hearing and learning.
 ***
 
-##How To Install
+## How To Install
 ***
 
 Simply download the .zip file and extract it to your preferred directory.
 ***
 
-##How It Works
+## How It Works
 ***
 
 This platform requires ffmpeg to be installed on your local machine. It can be downloaded here: https://www.gyan.dev/ffmpeg/builds/
