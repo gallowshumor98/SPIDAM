@@ -222,8 +222,8 @@ class WaveformPlotter:
         
         # Display difference to reach 0.5 seconds
         plt.annotate('Difference from 0.5(s): {}'.format('+0.27(s)'),
-                     xy=(0.5, 0.95), xycoords='axes fraction',
-                     ha='center', va='center',
+                     xy=(0.5, 0), xycoords='axes fraction',
+                     ha='center', va='bottom',
                      bbox=dict(boxstyle='round', alpha=0.1),
                      fontsize=10)
 

@@ -1,0 +1,20 @@
+[project]
+name = "SPIDAM"
+version = "1.0"
+authors = [
+{ name="Hannah Hensely",
+email="hhensley0197@floridapoly.edu" },
+{ name="Grace Hensley",
+email="ghensley1098@floridapoly.edu" },
+]
+description = "Scientific Python Interactive Data Acoustic Modeling Project"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+"Programming Language :: Python :: 3",
+"License :: OSI Approved :: MIT License",
+"Operating System :: OS Independent",
+]
+[project.urls]
+Homepage = "https://github.com/gallowshumor98/SPIDAM"
+Issues = "https://github.com/gallowshumor98/SPIDAM/issues"

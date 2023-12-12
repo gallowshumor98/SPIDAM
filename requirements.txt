@@ -1,0 +1,8 @@
+pip install pydub
+pip install ffmpeg
+pip install os
+pip install tkinter
+pip install wave
+pip install numpy
+pip install matplotlib
+pip install scipy
