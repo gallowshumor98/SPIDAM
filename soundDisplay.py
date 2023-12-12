@@ -188,3 +188,11 @@ class WaveformPlotter:
         plt.title('Spectrogram of Audio File')
         plt.colorbar(label='Intensity [dB]')
         plt.show()
+        
+    def plot_alternating(self, count):
+        if count == 0:
+            self.plot_low()
+        if count == 1:
+            self.plot_mid()
+        if count == 2:
+            self.plot_high()

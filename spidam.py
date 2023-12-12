@@ -24,6 +24,7 @@ from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
 
 gfile = ''
+count = 0
 plot_button = None  # Global reference to the 'Plot' button
 
 # create the root window
@@ -58,6 +59,7 @@ def select_file():
     high_button.config(state="normal")
     combined_button.config(state="normal")
     other_button.config(state="normal")
+    alt_button.config(state="normal")
     
     # Show selected file in messagebox
     showinfo(title='Selected File', message=gfile)
@@ -85,6 +87,14 @@ def combined():
 def choice():
     sound_display = WaveformPlotter(gfile)
     sound_display.plot_choice()
+
+def alternate():
+    global count
+    count += 1
+    if count == 3:
+        count = 0
+    sound_display = WaveformPlotter(gfile)
+    sound_display.plot_alternating(count)
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
@@ -117,6 +127,10 @@ combined_button.grid(row=4, column=0, columnspan=1, pady=5, padx=5, sticky='ew')
 # Other button (initially disabled)
 other_button = ttk.Button(root, text='Spectrogram', command=choice, state="disabled")
 other_button.grid(row=4, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
+
+# Alternating button (initially disabled)
+alt_button = ttk.Button(root, text='Alternate', command=alternate, state="disabled")
+alt_button.grid(row=5, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
