@@ -1,4 +1,3 @@
-########6 - Display the waveform from file
 import wave
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,9 +26,10 @@ class WaveformPlotter:
             self.time_axis = np.arange(0, params.nframes) / params.framerate
 
     def plot_waveform(self):
+        # See if audio file is empty
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-        
+        # Clear graph of previous plots
         plt.clf()
         # Plot the waveform
         plt.plot(self.time_axis, self.audio_array)
@@ -74,9 +74,10 @@ class WaveformPlotter:
         return rt60_values
         
     def plot_high(self, window_size=500):
+        # Plots the RT60 and displays a scatter of the highest amplitude
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-
+        # Clear graph of previous plots
         plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
@@ -101,9 +102,10 @@ class WaveformPlotter:
         plt.show()
 
     def plot_mid(self, window_size=500):
+        # Plots the RT60 and displays a scatter of the median amplitude
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-        
+        # Clear graph of previous plots
         plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
@@ -143,9 +145,10 @@ class WaveformPlotter:
         plt.show()
 
     def plot_low(self, window_size=500):
+        # Plots the RT60 and displays a scatter of the lowest amplitude
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-        
+        # Clear graph of previous plots
         plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
@@ -174,9 +177,10 @@ class WaveformPlotter:
         plt.show()
  
     def plot_combined(self, window_size=500):
+        # Plots the RT60 and displays a scatter of the high, median, and low amplitudes
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-        
+        # Clear graph of previous plots
         plt.clf()
         # Compute RT60 values
         rt60_values = self.rt60(self.audio_array, window_size)
@@ -228,16 +232,17 @@ class WaveformPlotter:
         
     # Plot spectrogram
     def plot_choice(self):
+        # Choice was to plot the spectrogram of the audio file
         if self.audio_array is None or self.time_axis is None:
             self.read_wave_file()
-        
+        # Clear graph of previous plots
         plt.clf()
         sampling_rate, audio_data = wavfile.read(self.wave_file)
         
         # Compute the spectrogram
         frequencies, times, spectrogram_data = spectrogram(audio_data, fs=sampling_rate)
 
-        # Plot the spectrogram
+        # Plot the graph
         plt.pcolormesh(times, frequencies, 10 * np.log10(spectrogram_data), shading='auto')
         plt.ylabel('Frequency [Hz]')
         plt.xlabel('Time [sec]')
@@ -246,6 +251,7 @@ class WaveformPlotter:
         plt.show()
         
     def plot_alternating(self, count):
+        # Alternates displaying RT60 with high, median, or low amplitude
         if count == 0:
             self.plot_low()
         if count == 1:

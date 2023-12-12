@@ -1,20 +1,3 @@
-#### Complete GUI - Load audio file, use a button to open it -> display the name of the file
-#### Implement processAudio.py -- Complete
-# Check if wav
-#    If mp3 or aac -> Convert to wav
-# Check if has meta or multi channel
-#    If yes -> remove meta or handle multi channel
-
-#### After processing, display wave form of wav file
-# Compute highest resonance and display frequency value in Hz
-# Compute Low, Mid, High frequency
-# Display plot of RT60 for Low, Mid, High frequecies
-#      Extra Credit - Button to Alternate through Low, Mid, High plots
-# Button to combine plots into single plot
-# Show difference in RT60 value to reduce to .5 seconds
-# Add button and additional visual output for useful data (your choice)
-
-# main.py
 from soundDisplay import WaveformPlotter
 from processAudio import AudioProcessor
 import os
@@ -23,6 +6,7 @@ from tkinter import ttk
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
 
+# Initiate global references
 gfile = ''
 count = 0
 plot_button = None  # Global reference to the 'Plot' button
@@ -33,7 +17,9 @@ root.title('Audio File Selection')
 root.resizable(False, False)
 root.geometry('275x200')
 
+
 def select_file():
+    #Method to select an audio file
     global gfile
     global plot_button
 
@@ -41,8 +27,7 @@ def select_file():
     filename = fd.askopenfilename(title='Open a file', initialdir='/', filetypes=filetypes)
     gfile = filename
 
-    # Process the audio file
-    #Convert to wav - Complete
+    # Process the audio fileand convert to wav
     if gfile.lower().endswith(('.mp3', '.aac')):
         audio_processor = AudioProcessor(gfile, os.path.splitext(gfile)[0] + '_converted.wav')
         audio_processor.process()
@@ -52,7 +37,7 @@ def select_file():
     # Update label with the selected file path
     gfile_label.config(text=gfile)
 
-    # Enable the 'Waveform' button
+    # Enable the functionality buttons that are dependent on a file being selected
     plot_button.config(state="normal")
     low_button.config(state="normal")
     mid_button.config(state="normal")
@@ -64,37 +49,45 @@ def select_file():
     # Show selected file in messagebox
     showinfo(title='Selected File', message=gfile)
 
+# Create instance and display waveform
 def plot_data():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_waveform()
-   
+
+# Create instance and display high frequency of RT60
 def high():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_high()
-    
+
+# Create instance and display low frequency of RT60
 def low():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_low()
-    
+
+# Create instance and display median frequency of RT60
 def mid():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_mid()
-    
+
+# Create instance and display high, mid, and low frequencies of RT60
 def combined():
     sound_display = WaveformPlotter(gfile)  
     sound_display.plot_combined()
-    
+
+# Create instance and display spectrogram of audio file
 def choice():
     sound_display = WaveformPlotter(gfile)
     sound_display.plot_choice()
 
+# Create instance and alternate between high, mid, and low
 def alternate():
     global count
+    sound_display = WaveformPlotter(gfile)
+    sound_display.plot_alternating(count)
     count += 1
     if count == 3:
         count = 0
-    sound_display = WaveformPlotter(gfile)
-    sound_display.plot_alternating(count)
+
 
 # Open button
 open_button = ttk.Button(root, text='Open a File', command=select_file)
@@ -132,6 +125,7 @@ other_button.grid(row=4, column=2, columnspan=1, pady=5, padx=5, sticky='ew')
 alt_button = ttk.Button(root, text='Alternate', command=alternate, state="disabled")
 alt_button.grid(row=5, column=1, columnspan=1, pady=5, padx=5, sticky='ew')
 
+# Lock columns in place
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=1)
 root.columnconfigure(2, weight=1)

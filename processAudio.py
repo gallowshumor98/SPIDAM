@@ -1,4 +1,3 @@
-# processAudio.py
 from pydub import AudioSegment
 import os
 
@@ -8,6 +7,7 @@ class AudioProcessor:
         self.output_file = output_file
 
     def process(self):
+        # Processes the audio and then converts the file to .wav format
         raw_audio = AudioSegment.from_file(self.input_file)
         channel_count = raw_audio.channels
         print("Original Channels:", channel_count)
