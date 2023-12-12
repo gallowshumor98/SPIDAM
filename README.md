@@ -18,7 +18,7 @@ This platform requires ffmpeg to be installed on your local machine. It can be d
 
 - Use 'ffmpeg' to run ffmpeg
 
-- Use 'python SPIDAM.py' to launch the platform
+- Use 'python spidam.py' to launch the platform
 
 - Select the 'Open a File' button
 
