@@ -206,8 +206,10 @@ class WaveformPlotter:
         # Find the index and value of the mid amplitude
         median_amplitude = (min_amplitude + max_amplitude) / 2
         median_index = np.argmin(np.abs(positive_rt60_values - median_amplitude))
-
-        
+		
+        avg = (time_rt60[max_index] + time_rt60[median_index] + time_rt60[min_index]) / 3
+        difference = avg - 0.5		
+		
         # Plot graph
         plt.plot(time_rt60, rt60_values, label='RT60', zorder=1)
         plt.title('RT60 Over Time of {}'.format(self.wave_file))
@@ -219,9 +221,9 @@ class WaveformPlotter:
         tick_positions = np.arange(0, self.time_axis[-1], 0.5)
         plt.xticks(tick_positions)
         plt.legend()
-        
+		       
         # Display difference to reach 0.5 seconds
-        plt.annotate('Difference from 0.5(s): {}'.format('+0.27(s)'),
+        plt.annotate('Difference from 0.5(s): +{:.2f}(s)'.format(difference),
                      xy=(0.5, 0), xycoords='axes fraction',
                      ha='center', va='bottom',
                      bbox=dict(boxstyle='round', alpha=0.1),
