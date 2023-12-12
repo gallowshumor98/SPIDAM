@@ -1,0 +1,566 @@
+commit ec1e38eeffeef2a54ffea358df70e9bb34780d27
+Merge: 0b17f29 050bbb0
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 23:46:06 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 23:46:06 2023 -0500
+
+    Merge branch 'test'
+
+commit 050bbb04ff1a7901aad6d3d8c4f709bf42685bae
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 23:45:45 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 23:45:45 2023 -0500
+
+    completed CHANGELOG.md
+
+commit 0b17f29489bf57764fcd39f0c9e586ce44989a94
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 23:40:51 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 23:40:51 2023 -0500
+
+    added annotation to display difference from 0.5
+
+commit f705a3b425fcd2666334cd0f2f541ac23abf2fe0
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 23:25:19 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 23:25:19 2023 -0500
+
+    added CHANGELOG.md, added and completed pyproject.toml, added and completed requirements.txt, fixed alignment of difference display annotation on plot
+
+commit 287e322b88600a2ef385296b959de2849c939102
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 22:23:51 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 22:23:51 2023 -0500
+
+    proper comments added
+
+commit 5f876ba7fff3e780d5d3c9ae556f19d8552b784e
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 22:05:50 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 22:05:50 2023 -0500
+
+    edited README.md format
+
+commit 3b37151c67e0442fabea75d1955b1badc85a84ca
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 22:03:29 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 22:03:29 2023 -0500
+
+    fixed graph axis labels
+
+commit 443efae81b6e464301d1895fca86b327b4ec62ab
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 22:01:37 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 22:01:37 2023 -0500
+
+    fixed graph axis labels
+
+commit 877816076cf3f9b33bf41b0f5b6dd5f53471ad2e
+Merge: c8aa599 517b9df
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 21:55:37 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 21:55:37 2023 -0500
+
+    Merge branch 'main' of https://github.com/gallowshumor98/SPIDAM
+
+commit c8aa599fdd2ddbd037093420d0194992718d8780
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 21:54:38 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 21:54:38 2023 -0500
+
+    functions actually calculate high, mid, low freqs from the audio file
+
+commit 517b9dfb8877e8e47bcc7e0cb6808e5a19a5c44f
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 21:42:40 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 21:42:40 2023 -0500
+
+    edited README.md format
+
+commit 9d91ea097a872b58a5d8dcd275a06cd69dcc3114
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 21:41:14 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 21:41:14 2023 -0500
+
+    edited README.md format
+
+commit 2764732035de583a8e34ceb2aa800aab393bc0ff
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 21:40:24 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 21:40:24 2023 -0500
+
+    edited README.md format
+
+commit 1c29af007644fbda67cb3c00d11f1efc2698eda2
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 21:39:30 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 21:39:30 2023 -0500
+
+    edited README.md
+
+commit 33bc5bb6573bf6674bbd4910743a9b46c1875453
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 19:33:14 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 19:33:14 2023 -0500
+
+    added extra credit button
+
+commit e0d7eb0286f571bc0ff5a8e61fe5ff43af8f30a6
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 18:07:28 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 18:07:28 2023 -0500
+
+    changed label of spectrogram button
+
+commit ab56de499ae5646612b433b5413b4a43ea398582
+Merge: 4b07bb1 85abc3b
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 18:03:10 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 18:03:10 2023 -0500
+
+    Merge branch 'main' of https://github.com/gallowshumor98/SPIDAM
+
+commit 4b07bb112f072dfb81dc05a2f9a443a129a318e6
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 18:02:54 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 18:02:54 2023 -0500
+
+    calculated difference is now displayed on combined plot
+
+commit 85abc3b3fbfff626ebaa1f940de953329e0450a4
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Dec 11 18:01:40 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Dec 11 18:01:40 2023 -0500
+
+    added extra functionality of choice - spectrogram, also added clear plot before each graph is displayed
+
+commit 5b676997547b928c8a8fbe599f81e66080025549
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 17:35:32 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 17:35:32 2023 -0500
+
+    edited soundDisplay.py
+
+commit 7edd48396708d188084052eb894cf093350a7ba5
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 12:51:36 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 12:51:36 2023 -0500
+
+    combined method finalized
+
+commit e657ada208b4b325fd9c52f82f91ad11f56df9b2
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 12:39:36 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 12:39:36 2023 -0500
+
+    plot_mid and plot_low methods are now functional. buttons in spidam.py assigned commands
+
+commit 819c2efd05df7b1259a4090d00d6965c9d518b8c
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Mon Dec 11 12:01:53 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Mon Dec 11 12:01:53 2023 -0500
+
+    plot_high plots a point at 4540hz
+
+commit 09521318b5fbf306e44430d876c058080efaf914
+Merge: 6b82c81 8418650
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 23:34:17 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 23:34:17 2023 -0500
+
+    edits
+
+commit 8418650d17c5f7f6f10f167b7340e146b040e92d
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 23:33:16 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 23:33:16 2023 -0500
+
+    method for graphing rt60 is functional
+
+commit f055e7e1a1992bf40e6bb1cfc44be4ba48bdfb70
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 22:17:35 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 22:17:35 2023 -0500
+
+    changes to plot_high
+
+commit 6b82c81956a3b5a5934b26db2e626bed8afc27d2
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 22:17:30 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 22:17:30 2023 -0500
+
+    edits
+
+commit 6f9b0b8f3b8013e84f6b497212ccc0e218671623
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 21:56:47 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 21:56:47 2023 -0500
+
+    high button edit
+
+commit 789655c4dc4e4200c3e76335253864548601ee6e
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 21:46:41 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 21:46:41 2023 -0500
+
+    edited plot_high method
+
+commit 833d14f67db0c4cbf91eba7c9ae322495a8daa82
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 21:41:39 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 21:41:39 2023 -0500
+
+    created methods for low medium high choice
+
+commit 9e16e28e2f1f88acc0b7c513278a90170070d5ac
+Merge: 3d5596c 727f913
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 21:35:07 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 21:35:07 2023 -0500
+
+    Merge branch 'test'
+
+commit 727f9130b187373dde034150b325dde73546aaac
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 21:33:26 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 21:33:26 2023 -0500
+
+    highest frequency is now displayed on waveform plot
+
+commit d0555adc20b94538970ab31515d5cc96056931ca
+Merge: a3b901c 79eab72
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 21:11:42 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 21:11:42 2023 -0500
+
+    merge with main
+
+commit 3d5596c5c2216faa4e9ee226ec58fe3b0047222e
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 21:08:11 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 21:08:11 2023 -0500
+
+    rearranged buttons
+
+commit a3b901c388aeb2eab8ff33da4567e54306760fde
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 21:05:16 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 21:05:16 2023 -0500
+
+    edits
+
+commit 79eab725d9e014a81b1f3aaa7489d743e1e7deb7
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 20:57:13 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 20:57:13 2023 -0500
+
+    added buttons
+
+commit 59ddfd29e3559805ab34849905200b35c76d2895
+Merge: 362d44c a6f510a
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 20:31:09 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 20:31:09 2023 -0500
+
+    Merge branch 'main' into test
+
+commit 362d44cc9bdf1abbbaee7863f0565753ac3e6f7a
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 20:30:41 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 20:30:41 2023 -0500
+
+    edited soundDisplay.py
+
+commit a6f510a6ae1540287074fd6d8a4ea57116a265ce
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 20:09:12 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 20:09:12 2023 -0500
+
+    processes audio and converts
+
+commit eab87f701163293564e2a23adaec62e1b804b2b2
+Merge: 6e85783 c74421f
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 17:17:01 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 17:17:01 2023 -0500
+
+    Merge branch 'test'
+
+commit c74421fc5f18c55493b7b5ff911bd029d43979ff
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 17:16:23 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 17:16:23 2023 -0500
+
+    Converts aac or mp3 to wav
+
+commit 6e8578306a03d50b157e6331a477f486019f92b2
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 16:47:07 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 16:47:07 2023 -0500
+
+    now prints low, mid, and high frequencies in hz
+
+commit 046402a113bb2fa30f6a7a3a7511be7909cbbce6
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 16:13:09 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 16:13:09 2023 -0500
+
+    added method to find highest resonance frequency
+
+commit 671fe5584a4063bc6c71843b34f1cb0946632d45
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 15:29:53 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 15:29:53 2023 -0500
+
+    Plot button has functionality now, yay!
+
+commit 7799f4cc1b2592bf9402d6c21b91cbac93b6ad53
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 15:03:03 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 15:03:03 2023 -0500
+
+    commented out unused code
+
+commit 86aabc99b66385b307dc7da7cc0698e43bde3a16
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 14:59:46 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 14:59:46 2023 -0500
+
+    commented out unused code
+
+commit e49e239dfe794e44a1d81229a59f291c8c5fd49a
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 14:56:28 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 14:56:28 2023 -0500
+
+    added functionality to plot button
+
+commit 6f9acf8b5fc4d801128d70c5d9827977ae000507
+Merge: f77fa7b 2f10ac1
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 14:49:55 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 14:49:55 2023 -0500
+
+    Merge branch 'main' into test
+
+commit f77fa7bcff4011b39748d6ab0f737dc6103327b6
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 14:47:24 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 14:47:24 2023 -0500
+
+    updated to pull
+
+commit 2f10ac1bc45edfd56df03ba31732996bb5fc78a7
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 14:45:33 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 14:45:33 2023 -0500
+
+    converted method to class
+
+commit f42c4b4ef4366bc7a72a0f54148ece43dc412858
+Merge: c0a848f 7427d85
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 14:35:09 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 14:35:09 2023 -0500
+
+    merge main and test
+
+commit 7427d8517d095c1aca563f4340560d420904dfb7
+Merge: bb297c9 68609f5
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 14:32:12 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 14:32:12 2023 -0500
+
+    added waveform display file
+
+commit c0a848f10e6d0c7b25201af6711be91420b1d375
+Merge: 5e1ba18 bb297c9
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 14:30:25 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 14:30:25 2023 -0500
+
+    added waveform display file
+
+commit 68609f549531b7541cd4b1340f2468774e9955ce
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 14:30:03 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 14:30:03 2023 -0500
+
+    Added sound waveform file
+
+commit 65d3def0dacab49de0155fb8397c521b65cf5d4f
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 14:05:00 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 14:05:00 2023 -0500
+
+    changed code
+
+commit 5e1ba18d0fb0d94f770a91c2976f45e5bf884c7b
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 14:01:46 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 14:01:46 2023 -0500
+
+    added waveform display file
+
+commit bb297c9d988b2099d1d4a4370d6684b1c0a2a1d7
+Author:     GHensley <gmhensley26@gmail.com>
+AuthorDate: Sun Dec 10 13:51:50 2023 -0500
+Commit:     GHensley <gmhensley26@gmail.com>
+CommitDate: Sun Dec 10 13:51:50 2023 -0500
+
+    added waveform display file
+
+commit a9da55a8a022a9f6073b146e363ffc3cb7cc841a
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 13:33:31 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 13:33:31 2023 -0500
+
+    Edited GUI
+
+commit d664360e6d35b9fa5326a886d89e8509493f045a
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 13:14:46 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 13:14:46 2023 -0500
+
+    Removed unneccessary code
+
+commit b90f7b8b3af66c6c1aa0f0b0fd482a819250c6c9
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sun Dec 10 13:07:22 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sun Dec 10 13:07:22 2023 -0500
+
+    Simplified tasks for coding
+
+commit 875130aff2d50d759c45e6dbfe500ca4fd89910b
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sat Dec 9 15:54:15 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sat Dec 9 15:54:15 2023 -0500
+
+    Finished GUI to select audio file and added a button to plot that only shows after a file has been selected
+
+commit e378605c753d9b2ade85aea553fb3110a6b593d9
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Sat Dec 9 14:51:38 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Sat Dec 9 14:51:38 2023 -0500
+
+    found methods for processing audio, made a separate file called processAudio.py to organize the methods. Still needs to be modified to work with the GUI when it is done
+
+commit 30f6355314693f0e5ded6e7e03d2cc6ed3d14075
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Thu Dec 7 16:07:49 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Thu Dec 7 16:07:49 2023 -0500
+
+    display wave from sound file, needs modified
+
+commit 97cbaa1e9e1ca5b78599c04024b5a6871ff868d7
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Thu Dec 7 15:59:00 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Thu Dec 7 15:59:00 2023 -0500
+
+    tkinter to open file, still needs modified for audio files
+
+commit d4d691018d02a32af7329ae863a36e9485c3b248
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Thu Dec 7 12:07:05 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Thu Dec 7 12:07:05 2023 -0500
+
+    Added hall clap .wav file to project
+
+commit 53037e1cba74101a82c99f14a4aa0e164c3067ff
+Merge: 9f3fc43 640097f
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Nov 27 13:41:27 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Nov 27 13:41:27 2023 -0500
+
+    Pulling original
+
+commit 640097f6f2d9cec9139f65767b79127f0057d12f
+Author:     hhensley98 <84143180+gallowshumor98@users.noreply.github.com>
+AuthorDate: Mon Nov 27 13:40:38 2023 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: Mon Nov 27 13:40:38 2023 -0500
+
+    Create README.md
+    
+    Set up README.md - incomplete
+
+commit 9f3fc43b8debada2d674e0b59bf1ed3f833027b0
+Author:     hhensley98 <hrhensley98@gmail.com>
+AuthorDate: Mon Nov 27 13:39:50 2023 -0500
+Commit:     hhensley98 <hrhensley98@gmail.com>
+CommitDate: Mon Nov 27 13:39:50 2023 -0500
+
+    Converting flowchart into tasks
+
+commit 2510f572c7ed94b075f303e83250a398dca62fe4
+Author:     hrhensley98 <84143180+hrhensley98@users.noreply.github.com>
+AuthorDate: Mon Nov 6 13:16:26 2023 -0500
+Commit:     hrhensley98 <84143180+hrhensley98@users.noreply.github.com>
+CommitDate: Mon Nov 6 13:16:26 2023 -0500
+
+    Initial commit
